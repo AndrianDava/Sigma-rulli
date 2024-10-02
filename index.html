@@ -1,125 +1,138 @@
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
-    />
-
-    <title>Server Mabar</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#141118] dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-      <div class="flex items-center bg-[#141118] p-4 pb-2 justify-between">
-        <h2 class="text-white text-3xl md:text-4xl font-bold leading-tight tracking-[-0.015em] text-center">Sigma</h2>
-      </div>
-      <div class="@container">
-        <div class="@[480px]:p-4">
-          <div
-            class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10"
-            style=' 
-              background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://files.catbox.moe/aend4c.png"); backdrop-filter: blur(8px); '
-          >
-            <div class="flex flex-col gap-2 text-left">
-              <h1
-                class="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-              >
-                Server yang dibuat agar bisa Mabar Minecraft :v
-              </h1>
-            </div>
-            <button
-              id="copy-ip-button"
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 md:h-12 md:px-5 bg-[#8019e6] text-white text-sm md:text-base font-bold leading-normal tracking-[0.015em]"
-            >
-              <span class="truncate">Copy IP & Port</span>
-            </button>
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+  />
+  <title>Server Mabar</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<body>
+  <div class="relative flex size-full min-h-screen flex-col bg-[#141118] dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="flex items-center bg-[#141118] p-4 pb-2 justify-between">
+      <h2 class="text-white text-3xl font-bold leading-tight tracking-[-0.015em] text-center">Sigma</h2>
+    </div>
+    <div class="@container">
+      <div class="@container p-4">
+        <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat gap-8 rounded-lg items-start justify-end px-4 pb-10 lg:px-10"
+          style='background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://files.catbox.moe/aend4c.png"); backdrop-filter: blur(8px);'>
+          <div class="flex flex-col gap-2 text-left">
+            <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] lg:text-5xl">
+              Server yang dibuat agar bisa Mabar Minecraft :v
+            </h1>
           </div>
-        </div>
-      </div>
-
-      <h2 class="text-white text-[22px] md:text-[28px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Server Information</h2>
-
-      <!-- Server Status -->
-      <div class="flex items-center gap-4 bg-[#141118] px-4 min-h-[72px] py-2">
-        <div class="text-white flex items-center justify-center rounded-lg bg-[#302938] shrink-0 size-12">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"></path>
-          </svg>
-        </div>
-        <div class="flex flex-col justify-center">
-          <p class="text-white text-base font-medium leading-normal">Server IP</p>
-          <p class="text-[#ab9db8] text-sm font-normal leading-normal">play.clubbymc.my.id</p>
-        </div>
-      </div>
-
-      <!-- Server Version -->
-      <div class="flex items-center gap-4 bg-[#141118] px-4 min-h-[72px] py-2">
-        <div class="text-white flex items-center justify-center rounded-lg bg-[#302938] shrink-0 size-12">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M128,40a88,88,0,1,0,88,88A88.1,88.1,0,0,0,128,40Zm36.73,92.34a8,8,0,0,1-11.31,0L128,107.5l-25.42,25.84a8,8,0,1,1-11.32-11.32l32-32a8,8,0,0,1,11.31,0l32,32A8,8,0,0,1,164.73,132.34Z"></path>
-          </svg>
-        </div>
-        <div class="flex flex-col justify-center">
-          <p class="text-white text-base font-medium leading-normal">Server Version</p>
-          <p id="server-version" class="text-[#ab9db8] text-sm font-normal leading-normal">Loading...</p>
-        </div>
-      </div>
-
-      <!-- Server Players -->
-      <div class="flex items-center gap-4 bg-[#141118] px-4 min-h-[72px] py-2">
-        <div class="text-white flex items-center justify-center rounded-lg bg-[#302938] shrink-0 size-12">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M128,108a40,40,0,1,0-40-40A40,40,0,0,0,128,108Zm0-64a24,24,0,1,1-24,24A24,24,0,0,1,128,44Zm54.06,58.91a7.9,7.9,0,0,0-10.22,5.15L157,164.48l-16.51-16.5a39.9,39.9,0,0,0-29.12-11.67L96,136a40,40,0,0,0-27.5,11L50.34,165.19a8,8,0,1,0,11.31,11.32l18.17-18.17A24.1,24.1,0,0,1,96,152h15.35a23.92,23.92,0,0,1,17,7l34.38,34.39a8,8,0,0,0,13.56-2.64L195,135.52l8.56,25.68A40,40,0,0,0,239.36,184h8.64a8,8,0,0,0,0-16h-8.64a24.06,24.06,0,0,1-22.79-16.32l-11.58-34.75A8,8,0,0,0,182.06,102.91Z"></path>
-          </svg>
-        </div>
-        <div class="flex flex-col justify-center">
-          <p class="text-white text-base font-medium leading-normal">Players</p>
-          <p id="server-players" class="text-[#ab9db8] text-sm font-normal leading-normal">Loading...</p>
+          <button
+            id="copy-ip-button"
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 lg:h-12 lg:px-5 bg-[#8019e6] text-white text-sm font-bold leading-normal tracking-[0.015em] lg:text-base lg:font-bold lg:leading-normal lg:tracking-[0.015em]"
+          >
+            <span class="truncate">Copy IP & Port</span>
+          </button>
         </div>
       </div>
     </div>
+    <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Server Information</h2>
 
-    <script>
-      // Copy IP ke clipboard
-      document.getElementById("copy-ip-button").addEventListener("click", function () {
-        var copyText = "play.clubbymc.my.id";
-        navigator.clipboard.writeText(copyText).then(function () {
-          Swal.fire({
-            icon: "success",
-            title: "IP Tersalin",
-            text: "IP server telah disalin ke clipboard!",
-          });
-        });
+    <!-- Server Status -->
+    <div class="flex items-center gap-4 bg-[#141118] px-4 min-h-[72px] py-2">
+      <div class="text-white flex items-center justify-center rounded-lg bg-[#302938] shrink-0 size-12" data-icon="CellSignalFull" data-size="24px" data-weight="regular">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"></path>
+        </svg>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="text-white text-base font-medium leading-normal line-clamp-1">Server IP</p>
+        <p class="text-[#ab9db8] text-sm font-normal leading-normal line-clamp-2">play.clubbymc.my.id</p> <!-- IP dengan Port -->
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-[#141118] px-4 min-h-[72px] py-2">
+      <div class="text-white flex items-center justify-center rounded-lg bg-[#302938] shrink-0 size-12" data-icon="CheckCircle" data-size="24px" data-weight="regular">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
+        </svg>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="text-white text-base font-medium leading-normal line-clamp-1">Server Status</p>
+        <p id="server-status" class="text-[#ab9db8] text-sm font-normal leading-normal line-clamp-2">Loading...</p>
+      </div>
+    </div>
+
+    <!-- New section for Server Version -->
+    <div class="flex items-center gap-4 bg-[#141118] px-4 min-h-[72px] py-2">
+      <div class="text-white flex items-center justify-center rounded-lg bg-[#302938] shrink-0 size-12" data-icon="CheckCircle" data-size="24px" data-weight="regular">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M128,40a88,88,0,1,0,88,88A88.1,88.1,0,0,0,128,40Zm36.73,92.34a8,8,0,0,1-11.31,0L128,107.5l-25.42,25.84a8,8,0,1,1-11.32-11.32l32-32a8,8,0,0,1,11.31,0l32,32A8,8,0,0,1,164.73,132.34Z"></path>
+        </svg>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="text-white text-base font-medium leading-normal line-clamp-1">Server Version</p>
+        <p id="server-version" class="text-[#ab9db8] text-sm font-normal leading-normal line-clamp-2">Loading...</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-[#141118] px-4 min-h-[72px] py-2">
+      <div class="text-white flex items-center justify-center rounded-lg bg-[#302938] shrink-0 size-12" data-icon="PersonSimpleWalk" data-size="24px" data-weight="regular">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M128,120a36,36,0,1,1,36-36A36.1,36.1,0,0,1,128,120Zm0,16a52,52,0,0,0-52,52v8a12,12,0,0,0,12,12h80a12,12,0,0,0,12-12v-8A52,52,0,0,0,128,136Zm0-16a20,20,0,1,0-20-20A20.1,20.1,0,0,0,128,120Z"></path>
+        </svg>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="text-white text-base font-medium leading-normal line-clamp-1">Players</p>
+        <p id="players" class="text-[#ab9db8] text-sm font-normal leading-normal line-clamp-2">Loading...</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-[#141118] px-4 min-h-[72px] py-2">
+      <div class="text-white flex items-center justify-center rounded-lg bg-[#302938] shrink-0 size-12" data-icon="Users" data-size="24px" data-weight="regular">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M128,112a48,48,0,1,0,48,48A48,48,0,0,0,128,112Zm0,16a32,32,0,1,1-32,32A32.1,32.1,0,0,1,128,128Zm56,56a48,48,0,0,0-56,0,63.73,63.73,0,0,1-36.68,12.5c-4.42,0-8.62-.46-12.78-1.36a8,8,0,0,0-9.15,6.14A71.92,71.92,0,0,0,128,192c9.07,0,17.95-1.7,26.09-5.1A63.81,63.81,0,0,0,184,184ZM216,128a40,40,0,1,0-40,40,40,40,0,0,0,40-40Zm-56-56a40,40,0,0,0-80,0,40,40,0,0,0,80,0Zm56,0a40,40,0,0,0-40,40,40,40,0,0,0,40-40Zm-16,56a56,56,0,0,1-56,56,56.07,56.07,0,0,1-56-56,56,56,0,0,1,56-56,56.07,56.07,0,0,1,56,56Z"></path>
+        </svg>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="text-white text-base font-medium leading-normal line-clamp-1">Max Players</p>
+        <p id="max-players" class="text-[#ab9db8] text-sm font-normal leading-normal line-clamp-2">Loading...</p>
+      </div>
+    </div>
+
+    <footer class="flex justify-center items-center py-4 text-center bg-[#141118]">
+      <p class="text-gray-400 text-sm">&copy; 2024 Server Mabar. All rights reserved.</p>
+    </footer>
+  </div>
+  
+  <script>
+    async function getServerData() {
+      const response = await fetch('https://api.mcsrvstat.us/2/play.clubbymc.my.id');
+      const data = await response.json();
+
+      const players = data.players.online || 0;
+      const maxPlayers = data.players.max || 0;
+      const status = data.online ? 'Online' : 'Offline';
+      const version = data.version || 'N/A';
+
+      document.getElementById('server-status').innerText = status;
+      document.getElementById('players').innerText = players ;
+      document.getElementById('max-players').innerText = maxPlayers;
+      document.getElementById('server-version').innerText = version;
+    }
+
+    document.getElementById('copy-ip-button').addEventListener('click', function() {
+      navigator.clipboard.writeText('play.clubbymc.my.id');
+      Swal.fire({
+        title: 'IP Copied!',
+        text: 'IP Address has been copied to clipboard.',
+        icon: 'success',
+        confirmButtonText: 'OK'
       });
+    });
 
-      // Fetch API untuk server info
-      async function updateServerInfo() {
-        try {
-          const response = await fetch("https://api.mcsrvstat.us/2/play.clubbymc.my.id");
-          const data = await response.json();
-
-          if (data.online) {
-            document.getElementById("server-version").textContent = data.version;
-            document.getElementById("server-players").textContent = `${data.players.online}/${data.players.max}`;
-          } else {
-            document.getElementById("server-version").textContent = "Server Offline";
-            document.getElementById("server-players").textContent = "0/0";
-          }
-        } catch (error) {
-          document.getElementById("server-version").textContent = "Error fetching data";
-          document.getElementById("server-players").textContent = "Error fetching data";
-        }
-      }
-
-      // Panggil updateServerInfo setiap 30 detik
-      setInterval(updateServerInfo, 30000);
-      updateServerInfo();
-    </script>
-  </body>
+    getServerData();
+  </script>
+</body>
 </html>
